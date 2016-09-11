@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                {% if csvfile %}
+                    <h2>Your results have been downloaded to {{ csvfile }}</h2>
+                    <a class="btn btn-secondary" href="{{ url_for('amazon') }}" role="button"> Scrape Again »</a>
+                {% else %}
+                    <h1>This app downloads a csv file of your search results on Amazon to Heroku</h1>
+                        <h2>Enter your Amazon search term below</h2>
+                            <form action="/amazon" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" name="search-term" placeholder="Search Keyword" class="form-control">
+                                </div>
+                                    <input type="submit" value="Submit" class="btn btn-primary">
+                            </form>
+                {% endif %}
+                <a class="btn btn-secondary" href="{{ url_for('index') }}" role="button">Home »</a>
+                <a class="btn btn-secondary" href="{{ url_for('about') }}" role="button">About »</a>
+                <a class="btn btn-secondary" href="{{ url_for('weather') }}" role="button">Find Weather »</a>
+                <a class="btn btn-secondary" href="{{ url_for('yelp') }}" role="button">Lookup Businesses »</a>
+            </div>
+        </div>
+    </body>
+</html>

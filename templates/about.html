@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>This project connects to the Yelp API and also searches Amazon for books on a topic of your choice!</h1>
+                <p>My name is Matt Rosinski and I built this project for <a href="http://
+                onemonth.com/courses.one-month-python">One Month Python</a>.
+                    {% if name %}
+                        <h2>Hello {{ name }}?</h2>
+                    {% else %}
+                        <h2>What do you want to do today?</h2>
+                    {% endif %}
+                </p>
+                <a class="btn btn-secondary" href="{{ url_for('index') }}" role="button">Home »</a>
+                <a class="btn btn-secondary" href="{{ url_for('weather') }}" role="button">Find Weather »</a>
+                <a class="btn btn-secondary" href="{{ url_for('yelp') }}" role="button">Lookup Businesses »</a>
+                <a class="btn btn-secondary" href="{{ url_for('amazon') }}" role="button">Scrape Amazon »</a>
+
+            </div>
+        </div>
+    </body>
+</html>
